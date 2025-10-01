@@ -1,0 +1,13 @@
+[
+    { "id": 0,  "exercise": "Start!",                "muscle": "Press the next arrow to begin your workout :D",              "category": "N/A" },
+    { "id": 1,  "exercise": "Bench Press",           "muscle": "Chest",              "category": "Push" },
+    { "id": 2,  "exercise": "Barbell Back Squat",    "muscle": "Quads/Glutes",       "category": "Legs" },
+    { "id": 3,  "exercise": "Deadlift",              "muscle": "Posterior Chain",    "category": "Pull" },
+    { "id": 4,  "exercise": "Overhead Press",        "muscle": "Shoulders",          "category": "Push" },
+    { "id": 5,  "exercise": "Barbell Row",           "muscle": "Back",               "category": "Pull" },
+    { "id": 6,  "exercise": "Lat Pulldown",          "muscle": "Lats",               "category": "Pull" },
+    { "id": 7,  "exercise": "Dumbbell Bicep Curl",   "muscle": "Biceps",             "category": "Pull" },
+    { "id": 8,  "exercise": "Tricep Pushdown",       "muscle": "Triceps",            "category": "Push" },
+    { "id": 9,  "exercise": "Leg Press",             "muscle": "Quads",              "category": "Legs" },
+    { "id": 10, "exercise": "Romanian Deadlift",     "muscle": "Hamstrings/Glutes",  "category": "Legs" }
+  ]
