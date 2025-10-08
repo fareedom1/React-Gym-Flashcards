@@ -1,57 +1,73 @@
-# Web Development Project 2 - *Gym Exercise Flashcards*
+# Web Development Project 3 - *Gym Exercise Flashcards*
 
 Submitted by: **Fareed Uddin**
 
-This web app: **is an interactive flashcard quiz for learning gym exercises and their target muscles. Users can click on a card to flip it between the exercise name and the corresponding muscle group. The app displays a title, a short description, the total number of cards, and allows the user to move to a random next card. The design includes a flipping animation for the cards and a subtle dumbbell-pattern background.**
+This web app: **is an interactive flashcard quiz designed to help users learn and memorize common gym exercises and the muscle groups they target. Users can type their guesses before flipping the card, receive instant feedback on whether they are correct or not, and navigate through an ordered deck of exercise cards using Back and Next buttons. Each incorrect attempt triggers a short shake animation on the card to visually signal an error.**
 
-Time spent: **8** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-
-- [x] **The app displays the title of the card set, a short description, and the total number of cards**
-  - [x] Title of card set is displayed 
-  - [x] A short description of the card set is displayed 
-  - [x] A list of card pairs is created
-  - [x] The total number of cards in the set is displayed 
-  - [x] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
-- [x] **A single card at a time is displayed**
-  - [x] Only one half of the information pair is displayed at a time
-- [x] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
-  - [x] Clicking on a card flips it over, showing the back with corresponding information 
-  - [x] Clicking on a flipped card again flips it back, showing the front
-- [x] **Clicking on the next button displays a random new card**
+- [x] **The user can enter their guess into an input box *before* seeing the flipside of the card**
+  - Application features a clearly labeled input box with a submit button where users can type in a guess
+  - Clicking on the submit button with an **incorrect** answer shows visual feedback that it is wrong 
+  -  Clicking on the submit button with a **correct** answer shows visual feedback that it is correct
+- [x] **The user can navigate through an ordered list of cardss**
+  - A forward/next button displayed on the card navigates to the next card in a set sequence when clicked
+  - A previous/back button displayed on the card returns to the previous card in the set sequence when clicked
+  - Both the next and back buttons should have some visual indication that the user is at the beginning or end of the list (for example, graying out and no longer being available to click), not allowing for wrap-around navigation
 
 The following **optional** features are implemented:
 
-- [ ] Cards contain images in addition to or in place of text
-  - [ ] Some or all cards have images in place of or in addition to text
-- [ ] Cards have different visual styles such as color based on their category
-  - Example categories you can use:
-    - Difficulty: Easy/medium/hard
-    - Subject: Biology/Chemistry/Physics/Earth science
+
+- [ ] Users can use a shuffle button to randomize the order of the cards
+  - Cards should remain in the same sequence (**NOT** randomized) unless the shuffle button is clicked 
+  - Cards should change to a random sequence once the shuffle button is clicked
+- [ ] A user’s answer may be counted as correct even when it is slightly different from the target answer
+  - Answers are considered correct even if they only partially match the answer on the card 
+  - Examples: ignoring uppercase/lowercase discrepancies, ignoring punctuation discrepancies, matching only for a particular part of the answer rather than the whole answer
+- [ ] A counter displays the user’s current and longest streak of correct responses
+  - The current counter increments when a user guesses an answer correctly
+  - The current counter resets to 0 when a user guesses an answer incorrectly
+  - A separate counter tracks the longest streak, updating if the value of the current streak counter exceeds the value of the longest streak counter 
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of displayed cards
+  - The user can mark a card to indicate that it has been mastered
+  - Mastered cards are removed from the pool of displayed cards and added to a list of mastered cards
+
 
 The following **additional** features are implemented:
 
-* [x] Added a smooth 3D flipping animation for cards
-* [x] Implemented a custom dumbbell SVG background pattern with a dark overlay to improve visual design!
+* [x] Implemented a custom dumbbell SVG background pattern with a dark overlay to improve visual design
 * [x] Responsive design using CSS aspect-ratio so cards keep their shape on different screen sizes.
+* [x] Responsive design using CSS aspect-ratio so cards keep their shape on different screen sizes..
+
+
+ 
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
-<img src='./src/assets/project2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Here's a walkthrough of implemented user stories:
+
+<img src='./src/assets/Project3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/) for macOS
 
 ## Notes
 
-* Learning how to use useState effectively to manage both the current card index and flip state.
-* Debugging random card generation to avoid picking invalid indices or repeating the same card.
-* Figuring out the right CSS structure for the flip animation so that the entire card rotated, not just the text.
-* Implementing a responsive background pattern and making sure it didn’t overwhelm the cards..
+Challenges Encountered: 
+* Learning how to manage component state using useState:
+	-	We practiced storing and updating multiple pieces of state, including currentIndex (to track which card is showing) and isFlipped (to control the card’s front/back display).
+	-	The “Check Answer” feature specifically reinforced how each click updates the isCorrect flag to trigger feedback and animations.
+* Understanding user input and form handling in React:
+	-	Learned how to bind the text input’s value to a state variable (userInput) and handle updates with the onChange event.
+	-	The “Check Answer” button and onKeyDown for the Enter key both demonstrated how React handles controlled components without reloading the page.
+*	Ensuring state updates (flip, input, correctness) didn’t conflict with each other.
+*	Debugging why the entire card wasn’t flipping—resolved by moving the 3D transform to the correct element.
+*	Creating a visually clear but simple CSS design that works across different viewport sizes.
+*	Implementing the shake animation without interfering with the existing flip animation.
+
 
 ## License
 
