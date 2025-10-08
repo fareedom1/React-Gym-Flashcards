@@ -45,6 +45,22 @@ body {
   -webkit-perspective: 1000px; /* Safari */
   cursor: pointer;
 }
+/* When incorrect, we add .shake to the wrapper.
+We animate only a small horizontal translate so it feels like a "nope". */
+.card-scene.shake {
+  animation: card-shake 350ms ease;
+}
+/* Simple shake keyframes: move left/right a few pixels, then settle back to 0 */
+@keyframes card-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-8px); }
+  40%  { transform: translateX(8px); }
+  60%  { transform: translateX(-6px); }
+  80%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+  
 
 /* Rotating card */
 .card {
@@ -96,3 +112,37 @@ body {
   color: #888;
 }
 
+.button-notavailable{
+  opacity: .5;
+  cursor:auto;
+}
+
+.userInput {
+  min-width: 220px;             /* a reasonable default width */
+  padding: 10px 12px;           /* inner spacing */
+  border: 3px solid #cfcfcf;    /* light border */
+  border-radius: 8px;           /* rounded corners */
+  background: #ffffff;          /* white background for contrast */
+  color: #111;                  /* dark text */
+  outline: none;                /* remove default blue outline */
+}
+
+/* focus style so keyboard users see where they are */
+.userInput:focus {
+  border-color: #6aa0ff;        /* blue border on focus */
+  box-shadow: 0 0 0 3px rgba(106, 160, 255, 0.25); /* soft glow */
+}
+
+.userInput.correct {
+  border-color: #22c55e;        /* green */
+  background: #f0fff4;          /* very light green */
+}
+
+.userInput.incorrect {
+  border-color: #ef4444;        /* red */
+  background: #fff5f5;          /* very light red */
+}
+
+button{
+  margin: 5px;
+}
